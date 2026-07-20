@@ -26,18 +26,26 @@ export default function LoginPage() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       
       // Check user role
-      const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        if (userData.role === "ADMIN") {
-          router.push("/admin/dashboard");
-        } else {
-          router.push("/routes");
+      try {
+        const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          if (userData.role === "ADMIN") {
+            router.push("/admin/dashboard");
+            return;
+          }
         }
-      } else {
-        // Fallback if no user document exists
-        router.push("/routes");
+      } catch (firestoreErr: any) {
+        console.error("Firestore error:", firestoreErr);
+        if (firestoreErr.message?.includes("permissions") || firestoreErr.code === "permission-denied") {
+           console.warn("Firestore rules blocked reading user role. Defaulting to public routes.");
+           // We intentionally do not throw here so they can still log in as a public user.
+        }
       }
+      
+      // Fallback for regular users or if rule blocks read
+      router.push("/routes");
+      
     } catch (err: any) {
       setError(err.message || "Failed to log in.");
     } finally {
