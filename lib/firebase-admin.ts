@@ -24,10 +24,15 @@ export const createFirebaseAdminApp = () => {
     return null;
   }
 
-  return initializeApp({
-    credential: cert(firebaseAdminConfig),
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  });
+  try {
+    return initializeApp({
+      credential: cert(firebaseAdminConfig),
+      storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    });
+  } catch (error) {
+    console.error("Firebase Admin Initialization Error:", error);
+    return null;
+  }
 };
 
 const adminApp = createFirebaseAdminApp();
