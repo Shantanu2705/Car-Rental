@@ -11,7 +11,23 @@ export default async function VehicleDetailsPage(props: {
   const params = await props.params;
   if (!adminDb) return notFound();
 
-  const doc = await adminDb.collection("vehicles").doc(params.vehicleId).get();
+  let doc;
+  try {
+    doc = await adminDb.collection("vehicles").doc(params.vehicleId).get();
+  } catch (error: any) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background p-6">
+        <div className="bg-destructive/10 text-destructive border border-destructive rounded-lg p-6 max-w-lg">
+          <h1 className="text-xl font-bold mb-2">Database Connection Error</h1>
+          <p className="mb-4">Failed to fetch data from Firestore. Please check your Vercel Environment Variables and Service Account permissions.</p>
+          <pre className="bg-black/10 p-4 rounded text-xs overflow-auto">
+            {error?.message || String(error)}
+          </pre>
+        </div>
+      </div>
+    );
+  }
+
   if (!doc.exists) return notFound();
 
   const vehicle = { id: doc.id, ...doc.data() } as Vehicle;
