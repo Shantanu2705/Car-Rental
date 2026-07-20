@@ -12,16 +12,32 @@ export default async function BookRoutePage(props: {
   if (!adminDb) return notFound();
 
   // Fetch Route
-  const routeDoc = await adminDb.collection("routes").doc(params.routeId).get();
-  if (!routeDoc.exists) return notFound();
+  let routeDoc, vehiclesSnap, pricingSnap;
+  try {
+    routeDoc = await adminDb.collection("routes").doc(params.routeId).get();
+    if (!routeDoc.exists) return notFound();
+    
+    // 2. Fetch available vehicles
+    vehiclesSnap = await adminDb.collection("vehicles").where("status", "==", "AVAILABLE").get();
+    
+    // 3. Fetch pricing for this route
+    pricingSnap = await adminDb.collection("pricing").where("routeId", "==", routeDoc.id).get();
+  } catch (error: any) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background p-6">
+        <div className="bg-destructive/10 text-destructive border border-destructive rounded-lg p-6 max-w-lg">
+          <h1 className="text-xl font-bold mb-2">Database Connection Error</h1>
+          <p className="mb-4">Failed to fetch booking data from Firestore.</p>
+          <pre className="bg-black/10 p-4 rounded text-xs overflow-auto">
+            {error?.message || String(error)}
+          </pre>
+        </div>
+      </div>
+    );
+  }
+
   const route = { id: routeDoc.id, ...serializeDoc(routeDoc.data()) } as Route;
-
-  // Fetch Vehicles
-  const vehiclesSnap = await adminDb.collection("vehicles").where("status", "==", "AVAILABLE").get();
   const vehicles = vehiclesSnap.docs.map(doc => ({ id: doc.id, ...serializeDoc(doc.data()) })) as Vehicle[];
-
-  // Fetch Pricing for this Route
-  const pricingSnap = await adminDb.collection("pricing").where("routeId", "==", route.id).get();
   const pricing = pricingSnap.docs.map(doc => ({ id: doc.id, ...serializeDoc(doc.data()) })) as VehiclePricing[];
 
   return (
