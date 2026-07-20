@@ -1,7 +1,7 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { FirebaseApp, initializeApp, getApps, getApp } from "firebase/app";
+import { Auth, getAuth } from "firebase/auth";
+import { Firestore, getFirestore } from "firebase/firestore";
+import { FirebaseStorage, getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,7 +13,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase safely
-let app, auth, db, storage;
+let app: FirebaseApp | any;
+let auth: Auth | any;
+let db: Firestore | any;
+let storage: FirebaseStorage | any;
 try {
   app = getApps().length ? getApp() : initializeApp(firebaseConfig);
   auth = getAuth(app);
