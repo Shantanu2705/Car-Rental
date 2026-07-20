@@ -9,7 +9,7 @@ export default function CancellationPage() {
       <section className="relative py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Cancellation Policy</h1>
-          <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</p>
+          <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata', month: 'long', year: 'numeric' })}</p>
         </div>
       </section>
 

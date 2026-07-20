@@ -11,9 +11,9 @@ export async function getDashboardStats() {
     let todayRevenue = 0;
     let totalRevenue = 0;
     
-    // Get today's date in YYYY-MM-DD local format for simple comparison
-    // In a real app we'd use Firestore timestamp comparisons, but this is simpler for demo
-    const today = new Date().toISOString().split('T')[0];
+    // Get today's date in IST format YYYY-MM-DD
+    const { getTodayIST, getDateIST } = await import("@/lib/utils");
+    const today = getTodayIST();
 
     const allBookings = bookingsSnap.docs.map(doc => {
       const data = doc.data();
@@ -23,10 +23,9 @@ export async function getDashboardStats() {
       if (data.status === "CONFIRMED" || data.status === "COMPLETED") {
         totalRevenue += amount;
         
-        // If booked today, add to today's revenue
+        // If booked today (in IST), add to today's revenue
         if (data.createdAt) {
-          const createdDate = data.createdAt.toDate ? data.createdAt.toDate() : new Date(data.createdAt);
-          if (createdDate.toISOString().split('T')[0] === today) {
+          if (getDateIST(data.createdAt) === today) {
             todayRevenue += amount;
           }
         }

@@ -1,6 +1,7 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import { Booking } from "@/types";
+import { formatDateISTOnly } from "@/lib/utils";
 
 export function generateInvoice(booking: Booking, driverName?: string) {
   const doc = new jsPDF();
@@ -23,7 +24,7 @@ export function generateInvoice(booking: Booking, driverName?: string) {
   
   doc.setFontSize(10);
   doc.text(`Invoice No: ${booking.invoiceNumber || booking.id?.slice(0, 8).toUpperCase()}`, 150, 28);
-  doc.text(`Date: ${new Date(booking.createdAt).toLocaleDateString()}`, 150, 33);
+  doc.text(`Date: ${formatDateISTOnly(booking.createdAt)}`, 150, 33);
   doc.text(`Status: ${booking.status.replace("_", " ")}`, 150, 38);
   if (driverName) {
     doc.text(`Driver: ${driverName}`, 150, 43);

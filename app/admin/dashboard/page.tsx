@@ -3,6 +3,7 @@ import { IndianRupee, CalendarCheck, MapPin, Users } from "lucide-react";
 import { getDashboardStats } from "@/lib/actions/dashboard.actions";
 import Link from "next/link";
 import { format } from "date-fns";
+import { formatDateIST } from "@/lib/utils";
 
 export default async function AdminDashboard() {
   const stats = await getDashboardStats();
@@ -87,8 +88,7 @@ export default async function AdminDashboard() {
               {stats.recentBookings.map((booking: any) => {
                 let dateStr = "Unknown Date";
                 if (booking.createdAt) {
-                  const date = booking.createdAt.toDate ? booking.createdAt.toDate() : new Date(booking.createdAt);
-                  dateStr = format(date, "MMM d, h:mm a");
+                  dateStr = formatDateIST(booking.createdAt);
                 }
                 
                 return (
