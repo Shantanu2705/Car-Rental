@@ -7,15 +7,15 @@ export default async function PublicLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const settings = await getPlatformSettings();
+  const settings = await getPlatformSettings();
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* <Navbar settings={settings} /> */}
+      <Navbar settings={settings} />
       <main className="flex-1">
         {children}
       </main>
-      {/* <Footer settings={settings} /> */}
+      <Footer settings={settings} />
     </div>
   );
 }
