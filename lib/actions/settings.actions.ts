@@ -1,6 +1,6 @@
 "use server";
 
-import { adminDb, adminAuth } from "@/lib/firebase-admin";
+import { adminDb, getAdminAuth } from "@/lib/firebase-admin";
 
 const COLLECTION_NAME = "settings";
 const SETTINGS_DOC_ID = "global";
@@ -38,6 +38,7 @@ export async function updatePlatformSettings(settings: PlatformSettings) {
 }
 
 export async function updateAdminCredentials(uid: string, email?: string, password?: string) {
+  const adminAuth = await getAdminAuth();
   if (!adminAuth) throw new Error("Auth not initialized");
   
   const updatePayload: any = {};
