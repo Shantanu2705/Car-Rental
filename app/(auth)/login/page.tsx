@@ -63,7 +63,7 @@ export default function LoginPage() {
             <KeyRound className="w-6 h-6 text-primary" />
           </div>
           <h1 className="text-2xl font-bold">Welcome Back</h1>
-          <p className="text-muted-foreground mt-2 text-sm">Sign in to your ApexTravel account.</p>
+          <p className="text-muted-foreground mt-2 text-sm">Sign in to your CarDictionary account.</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">

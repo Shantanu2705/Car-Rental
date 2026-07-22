@@ -26,11 +26,9 @@ export function Navbar({ settings }: { settings?: PlatformSettings }) {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary p-2 rounded-lg group-hover:bg-primary/90 transition-colors">
-                <Car className="h-6 w-6 text-primary-foreground" />
-              </div>
+              <img src="/watermark.png" alt="CarDictionary Logo" className="h-10 w-auto object-contain" />
               <span className="font-bold text-xl tracking-tight text-foreground">
-                Apex<span className="text-primary">Travel</span>
+                Car<span className="text-primary">Dictionary</span>
               </span>
             </Link>
           </div>

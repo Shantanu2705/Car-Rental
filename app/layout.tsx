@@ -6,7 +6,7 @@ import { AuthProvider } from "@/components/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Apex Travel | Premium Car Rental & Tours",
+  title: "CarDictionary | Premium Car Rental & Tours",
   description: "Book premium cars and tours across North East India.",
 };
 

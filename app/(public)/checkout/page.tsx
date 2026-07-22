@@ -3,7 +3,7 @@ import { CheckoutClient } from "@/components/public/CheckoutClient";
 import { Loader2 } from "lucide-react";
 
 export const metadata = {
-  title: "Checkout | Apex Travel",
+  title: "Checkout | CarDictionary",
   description: "Complete your booking securely.",
 };
 

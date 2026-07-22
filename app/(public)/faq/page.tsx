@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Frequently Asked Questions | Apex Travel",
+  title: "Frequently Asked Questions | CarDictionary",
   description: "Find answers to commonly asked questions about our car rental services.",
 };
 

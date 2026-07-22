@@ -5,7 +5,7 @@ import { PlatformSettings } from "@/lib/actions/settings.actions";
 export function Footer({ settings }: { settings?: PlatformSettings }) {
   const address = settings?.officeAddress || "Siliguri, West Bengal, India";
   const phone = settings?.whatsappNumber || "+91 98765 43210";
-  const email = settings?.supportEmail || "support@apextravel.com";
+  const email = settings?.supportEmail || "support@cardictionary.com";
   const phoneLink = phone.replace(/[^0-9]/g, '');
 
   return (
@@ -16,11 +16,9 @@ export function Footer({ settings }: { settings?: PlatformSettings }) {
           {/* Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary p-2 rounded-lg group-hover:bg-primary/90 transition-colors">
-                <Car className="h-6 w-6 text-primary-foreground" />
-              </div>
+              <img src="/watermark.png" alt="CarDictionary Logo" className="h-10 w-auto object-contain" />
               <span className="font-bold text-xl tracking-tight text-foreground">
-                Apex<span className="text-primary">Travel</span>
+                Car<span className="text-primary">Dictionary</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -85,7 +83,7 @@ export function Footer({ settings }: { settings?: PlatformSettings }) {
 
         <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Apex Travel. All rights reserved.
+            &copy; {new Date().getFullYear()} CarDictionary. All rights reserved.
           </p>
           <div className="flex gap-4">
             {/* Social Icons could go here */}

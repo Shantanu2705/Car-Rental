@@ -31,11 +31,9 @@ export function AdminSidebar() {
   return (
     <div className="w-64 bg-card border-r border-border min-h-screen hidden md:flex flex-col">
       <div className="h-16 flex items-center px-6 border-b border-border">
-        <Link href="/admin/dashboard" className="font-bold text-xl tracking-tight text-foreground flex items-center gap-2">
-          <div className="bg-primary p-1.5 rounded-md">
-            <Car className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span>Apex<span className="text-primary">Admin</span></span>
+        <Link href="/admin/dashboard" className="flex items-center gap-2">
+          <img src="/watermark.png" alt="CarAdmin Logo" className="h-10 w-auto object-contain" />
+          <span className="font-bold text-xl tracking-tight text-foreground">Car<span className="text-primary">Admin</span></span>
         </Link>
       </div>
 

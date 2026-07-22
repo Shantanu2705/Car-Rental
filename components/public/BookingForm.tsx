@@ -55,6 +55,7 @@ export function BookingForm({ route, vehicles, pricing }: BookingFormProps) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    mode: "onChange",
     defaultValues: {
       tripType: "ONEWAY",
       pickupDate: "",
@@ -147,6 +148,7 @@ export function BookingForm({ route, vehicles, pricing }: BookingFormProps) {
                         <Select onValueChange={(val) => {
                           field.onChange(val);
                           form.setValue("vehicleId", ""); // Reset vehicle when trip type changes
+                          form.clearErrors("vehicleId");
                         }} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
@@ -218,7 +220,7 @@ export function BookingForm({ route, vehicles, pricing }: BookingFormProps) {
                       {availableVehicles.map((v) => (
                         <div 
                           key={v.id}
-                          onClick={() => form.setValue("vehicleId", v.id!)}
+                          onClick={() => form.setValue("vehicleId", v.id!, { shouldValidate: true })}
                           className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-all ${
                             watchVehicleId === v.id 
                               ? "border-primary bg-primary/5 ring-2 ring-primary/20" 

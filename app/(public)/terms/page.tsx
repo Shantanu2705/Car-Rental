@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms & Conditions | Apex Travel",
-  description: "Terms and conditions for using Apex Travel services.",
+  title: "Terms & Conditions | CarDictionary",
+  description: "Terms and conditions for using CarDictionary services.",
 };
 
 export default function TermsPage() {
@@ -23,7 +23,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">2. Booking and Reservations</h2>
             <p className="text-muted-foreground leading-relaxed">
-              All bookings are subject to availability. A booking is only confirmed once you receive a confirmation email or message from Apex Travel. We reserve the right to refuse service to anyone for any reason at any time.
+              All bookings are subject to availability. A booking is only confirmed once you receive a confirmation email or message from CarDictionary. We reserve the right to refuse service to anyone for any reason at any time.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">3. Payment Terms</h2>
@@ -38,7 +38,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">5. Liability</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Apex Travel shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of our services.
+              CarDictionary shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of our services.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">6. Changes to Terms</h2>

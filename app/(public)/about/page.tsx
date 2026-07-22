@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "About Us | Apex Travel",
-  description: "Learn more about Apex Travel, your premium car rental and tour booking platform.",
+  title: "About Us | CarDictionary",
+  description: "Learn more about CarDictionary, your premium car rental and tour booking platform.",
 };
 
 import { Shield, Star, Clock, Map } from "lucide-react";
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="relative py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            About <span className="text-primary">Apex Travel</span>
+            About <span className="text-primary">CarDictionary</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Your trusted partner for premium car rentals and unforgettable tours across North Eastern India.
@@ -50,7 +50,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tight">Our Story</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Founded with a vision to redefine travel experiences in North Eastern India, Apex Travel has grown to become the region's most trusted car rental and tour operator. We understand that every journey is special, whether it's a corporate trip, a family vacation, or an adventurous exploration.
+                Founded with a vision to redefine travel experiences in North Eastern India, CarDictionary has grown to become the region's most trusted car rental and tour operator. We understand that every journey is special, whether it's a corporate trip, a family vacation, or an adventurous exploration.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Our fleet comprises a wide range of meticulously maintained vehicles, from comfortable sedans to spacious SUVs and luxury coaches. Coupled with our team of experienced, courteous, and knowledgeable drivers, we ensure that your journey is as beautiful as the destination itself.

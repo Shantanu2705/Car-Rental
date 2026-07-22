@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Settings2, Wind, ChevronRight } from "lucide-react";
 
 export const metadata = {
-  title: "Our Premium Fleet | Apex Travel",
+  title: "Our Premium Fleet | CarDictionary",
   description: "Explore our diverse range of premium vehicles for your North East journey.",
 };
 

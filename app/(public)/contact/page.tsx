@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Contact Us | Apex Travel",
-  description: "Get in touch with Apex Travel for premium car rentals and tour packages.",
+  title: "Contact Us | CarDictionary",
+  description: "Get in touch with CarDictionary for premium car rentals and tour packages.",
 };
 
 import { MapPin, Phone, Mail, Clock } from "lucide-react";

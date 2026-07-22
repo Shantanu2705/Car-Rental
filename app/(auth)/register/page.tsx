@@ -53,7 +53,7 @@ export default function RegisterPage() {
             <UserPlus className="w-6 h-6 text-primary" />
           </div>
           <h1 className="text-2xl font-bold">Create an Account</h1>
-          <p className="text-muted-foreground mt-2 text-sm">Join ApexTravel to book and manage rides easily.</p>
+          <p className="text-muted-foreground mt-2 text-sm">Join CarDictionary to book and manage rides easily.</p>
         </div>
 
         <form onSubmit={handleRegister} className="space-y-6">

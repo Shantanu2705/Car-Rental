@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy | Apex Travel",
-  description: "Privacy policy and data handling practices of Apex Travel.",
+  title: "Privacy Policy | CarDictionary",
+  description: "Privacy policy and data handling practices of CarDictionary.",
 };
 
 export default function PrivacyPage() {
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">6. Contact Us</h2>
             <p className="text-muted-foreground leading-relaxed">
-              If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at privacy@apextravel.com or through our contact page.
+              If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at privacy@cardictionary.com or through our contact page.
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@ export interface PlatformSettings {
 
 const defaultSettings: PlatformSettings = {
   whatsappNumber: "+91 98765 43210",
-  supportEmail: "support@apextravel.com",
+  supportEmail: "support@cardictionary.com",
   officeAddress: "Siliguri, West Bengal, India",
 };
 

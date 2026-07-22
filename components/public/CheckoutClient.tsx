@@ -15,7 +15,7 @@ export function CheckoutClient() {
 
   // Example UPI ID
   const upiId = "merchant@upi";
-  const upiLink = `upi://pay?pa=${upiId}&pn=ApexTravel&am=${amount}&cu=INR`;
+  const upiLink = `upi://pay?pa=${upiId}&pn=CarDictionary&am=${amount}&cu=INR`;
 
   if (paymentComplete) {
     return (
@@ -25,7 +25,7 @@ export function CheckoutClient() {
         </div>
         <h1 className="text-4xl font-extrabold mb-4">Booking Confirmed!</h1>
         <p className="text-lg text-muted-foreground mb-8">
-          Thank you for choosing Apex Travel. Your booking for <strong>{booking}</strong> is confirmed. 
+          Thank you for choosing CarDictionary. Your booking for <strong>{booking}</strong> is confirmed. 
           We have sent the details to your email and our team will contact you shortly via WhatsApp.
         </p>
         <Link href="/">

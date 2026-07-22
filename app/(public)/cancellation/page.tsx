@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Cancellation Policy | Apex Travel",
-  description: "Cancellation and refund policy for Apex Travel bookings.",
+  title: "Cancellation Policy | CarDictionary",
+  description: "Cancellation and refund policy for CarDictionary bookings.",
 };
 
 export default function CancellationPage() {
@@ -39,9 +39,9 @@ export default function CancellationPage() {
               If you need to change your pickup time, date, or vehicle type, please contact us at least 24 hours in advance. Modifications are subject to vehicle availability and may result in a change in the total booking price.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">5. Cancellations by Apex Travel</h2>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">5. Cancellations by CarDictionary</h2>
             <p className="text-muted-foreground leading-relaxed">
-              In rare circumstances (such as extreme weather conditions, natural disasters, or unexpected vehicle breakdown), Apex Travel may need to cancel your booking. In such events, we will notify you immediately and provide a 100% refund or arrange an alternative vehicle at no extra cost.
+              In rare circumstances (such as extreme weather conditions, natural disasters, or unexpected vehicle breakdown), CarDictionary may need to cancel your booking. In such events, we will notify you immediately and provide a 100% refund or arrange an alternative vehicle at no extra cost.
             </p>
           </div>
         </div>

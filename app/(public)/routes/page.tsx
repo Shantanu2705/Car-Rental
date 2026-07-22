@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, MapPin, ChevronRight } from "lucide-react";
 
 export const metadata = {
-  title: "Popular Routes | Apex Travel",
+  title: "Popular Routes | CarDictionary",
   description: "Explore our popular car rental and tour routes in the North East.",
 };
 
